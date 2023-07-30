@@ -1,0 +1,43 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+        <span>
+            <h1 class="mainHeadingOfblog">BLOGS</h1>
+        </span>
+
+
+        <div class="blog_area">
+
+        {% for contentData in contentData %}
+            <div class="heading_ogBlog">
+                <h3> <span><i class="bi bi-asterisk"></i></span> {{contentData.title}} </h3>
+            </div>
+
+            <div class="content-img">
+                <span class="img1 blog-image">
+                    <img src={{image +'/'+ contentData.img1}} alt="image of something">
+                    <p class="img-about">Lorem ipsum dolor sit amet.</p>
+                </span>
+                <span class="img2 blog-image">
+                    <img src={{image +'/'+ contentData.img2}} alt="">
+                    <p class="img-about">Lorem ipsum dolor sit amet.</p>
+
+                </span>
+            </div>
+            <div class="contentRelated">
+                <div class="authorInfo">
+                    <span>{{contentData.author_name}} </span>
+                    <span> {{contentData.date_time}} </span>
+                </div>
+
+                <div class="content">
+                    {{contentData.content}}
+                </div>
+            </div>
+
+        {% endfor %}
+        </div>
+    </section>
+
+{% endblock %}
